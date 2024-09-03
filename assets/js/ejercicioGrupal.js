@@ -9,6 +9,19 @@
 
 // Si todas las validaciones son correctas, la función debe devolver 'Formulario válido'. Si alguna falla, debe devolver un mensaje indicando cuál validación falló. Usa operadores lógicos y ternarios.
 
+const validar = (usuario, contraseña, anio) => {
+    return !usuario ? 'El nombre de usuario no puede estar vacío'
+    : contraseña.length < 8 ? 'La contraseña debe tener al menos 8 caracteres'
+    : anio < 18  ? 'Debes tener al menos 18 años'
+    : "Formulario valido";
+}
+
+
+console.log(validar("Emiliano", "123456" , 31 ))
+console.log(validar("", "12345678" , 31 ))
+console.log(validar("Emiliano", "12345678" , 15 ))
+
+
 // Ejercicio 2: Determinación de Horario de Atención
 // Consigna:
 // Crea una función estaAbierto que reciba dos parámetros: dia y hora. La función debe determinar si una tienda está abierta basado en los siguientes horarios:
